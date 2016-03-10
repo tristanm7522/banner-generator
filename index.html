@@ -5,10 +5,65 @@
     <title>jQuery Template</title>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"> </script>
     <script>$(function(){
-    });</script>
+      $("#sub").click(function() {
+        $("h1").hide(1000);
+        var founder = $("#founder").val();
+        var companyName = $("#companyName").val();
+        var color =$("input[name='color']:checked").val();
+        $('#userFounder').html(founder);
+        $('#userCompany').html(companyName);
+        
+        if(color == "yellow"){
+          $('body').css('background-color',"yellow");
+        }
+        if(color == "red"){
+          $('body').css('background-color',"red");
+        }
+        if(color == "green"){
+          $('body').css('background-color',"green");
+        }
+        if(color == "blue"){
+          $('body').css('background-color',"blue");
+        }
+        $('h3').hide(1000);
+        $('input').hide(1000);
+        $('span').hide(1000);
+        $("h1").show(1000);
+      });
+      
+    });
+    </script>
+    <style>
+      h1{
+        text-align:center;
+      }
+      body{
+        font-family: Futura;
+      }
+    </style>
   </head>
   <body>
-  hey Tristan
+    <h1 id="userFounder"></h1>
+    <h1 id="userCompany"></h1>
+    <h3>Founder</h3>
+  <input type="text" id="founder" name="founder" placeholder= Name></input>
+  <br>
+  <br>
+  <h3>Your Company Name</h3>
+  <input type="text" id="companyName" placeholder= "Company Name"></input>
+  <br>
+  <br>
+  <h3>Theme Color</h3>
+  <input type="radio" id="color1" name="color"  value= "blue"> <span>Blue</span></input>
+  <br>
+  <input type="radio" id="color2" name="color" value= "green" > <span>Green</span></input>
+  <br>
+  <input type="radio" id="color3" name="color" value= "red" > <span>Red</span></input>
+  <br>
+  <input type="radio" id="color4" name="color" value= "yellow" > <span>Yellow</span></input>
+  <br>
+  <br>
+  <input type = "submit" id="sub">
   </body>
 </html>
 
